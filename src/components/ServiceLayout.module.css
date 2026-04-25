@@ -1,0 +1,113 @@
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0d6b90 100%);
+  padding: 140px 0 80px;
+  color: #fff;
+}
+
+.heroLabel {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.heroTagline {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 600px;
+  line-height: 1.65;
+}
+
+.intro {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  max-width: 800px;
+}
+
+.capabilitiesSection {
+  padding-top: 0;
+}
+
+.capabilityList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.capability {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.capability:last-child {
+  border-bottom: none;
+}
+
+.capabilityContent {
+  max-width: 760px;
+}
+
+.capabilityTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+}
+
+.capabilityDesc {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.scopeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
+  margin-bottom: 48px;
+}
+
+.scopeItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.scopeCheck {
+  color: var(--color-secondary);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.cta {
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 120px 0 60px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .scopeGrid {
+    grid-template-columns: 1fr;
+  }
+}

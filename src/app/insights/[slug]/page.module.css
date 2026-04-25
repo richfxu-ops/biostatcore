@@ -1,0 +1,169 @@
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0d6b90 100%);
+  padding: 140px 0 60px;
+  color: #fff;
+}
+
+.back {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: color 0.15s;
+}
+
+.back:hover {
+  color: #fff;
+}
+
+.category {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  max-width: 720px;
+  margin-bottom: 16px;
+}
+
+.date {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+/* Article body styles */
+.body {
+  max-width: 720px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.body h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.body h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.body p {
+  margin-bottom: 24px;
+  color: var(--color-text-secondary);
+}
+
+.body ul, .body ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+  color: var(--color-text-secondary);
+}
+
+.body li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+.body strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.body em {
+  font-style: italic;
+}
+
+.body hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 40px 0;
+}
+
+.body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ctaCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ctaTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.ctaText {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.servicesCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.serviceLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+}
