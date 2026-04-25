@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import StatsCounter from '@/components/StatsCounter';
+import VantaHero from '@/components/VantaHero';
+import GlobalMap from '@/components/GlobalMap';
 import styles from './page.module.css';
 
 const services = [
@@ -88,48 +90,29 @@ export default function HomePage() {
   return (
     <>
       {/* A: Hero */}
-      <section className={styles.hero}>
-        <div className={styles.heroPattern} aria-hidden="true" />
-        <div className={`container ${styles.heroInner}`}>
-          <div className={styles.heroContent}>
-            <h1 className={styles.heroHeadline}>
-              Biostatistics That Move<br />Clinical Programs Forward
-            </h1>
-            <p className={styles.heroSubhead}>
-              From study design through regulatory submission, Biostat Core provides the
-              statistical rigor and global expertise your clinical program demands.
-            </p>
-            <div className={styles.heroCtas}>
-              <Link href="/services/biostatistics" className="btn-primary">
-                Explore Our Services
-              </Link>
-              <Link href="/about/our-team" className="text-link">
-                Learn About Our Team →
-              </Link>
+      <VantaHero>
+        <section className={styles.hero}>
+          <div className={`container ${styles.heroInner}`}>
+            <div id="hero-text" className={styles.heroContent}>
+              <h1 className={styles.heroHeadline}>
+                Biostatistics That Move<br />Clinical Programs Forward
+              </h1>
+              <p className={styles.heroSubhead}>
+                From study design through regulatory submission, Biostat Core provides the
+                statistical rigor and global expertise your clinical program demands.
+              </p>
+              <div className={styles.heroCtas}>
+                <Link href="/services/biostatistics" className="btn-primary">
+                  Explore Our Services
+                </Link>
+                <Link href="/about/our-team" className="text-link">
+                  Learn About Our Team →
+                </Link>
+              </div>
             </div>
           </div>
-          <div className={styles.heroDecor} aria-hidden="true">
-            <svg viewBox="0 0 400 400" className={styles.heroSvg} fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="200" cy="200" r="160" stroke="#0A4D68" strokeWidth="1" strokeDasharray="6 6" opacity="0.15" />
-              <circle cx="200" cy="200" r="110" stroke="#0A4D68" strokeWidth="1" strokeDasharray="4 8" opacity="0.1" />
-              <circle cx="200" cy="200" r="60" stroke="#E8913A" strokeWidth="1.5" opacity="0.2" />
-              <circle cx="200" cy="200" r="8" fill="#E8913A" opacity="0.3" />
-              <circle cx="200" cy="90" r="5" fill="#0A4D68" opacity="0.25" />
-              <circle cx="310" cy="200" r="5" fill="#0A4D68" opacity="0.25" />
-              <circle cx="200" cy="310" r="5" fill="#0A4D68" opacity="0.25" />
-              <circle cx="90" cy="200" r="5" fill="#0A4D68" opacity="0.25" />
-              <line x1="200" y1="90" x2="200" y2="200" stroke="#0A4D68" strokeWidth="0.75" opacity="0.2" />
-              <line x1="310" y1="200" x2="200" y2="200" stroke="#0A4D68" strokeWidth="0.75" opacity="0.2" />
-              <line x1="200" y1="310" x2="200" y2="200" stroke="#0A4D68" strokeWidth="0.75" opacity="0.2" />
-              <line x1="90" y1="200" x2="200" y2="200" stroke="#0A4D68" strokeWidth="0.75" opacity="0.2" />
-              <circle cx="130" cy="130" r="3" fill="#1A7A5A" opacity="0.3" />
-              <circle cx="270" cy="130" r="3" fill="#1A7A5A" opacity="0.3" />
-              <circle cx="270" cy="270" r="3" fill="#1A7A5A" opacity="0.3" />
-              <circle cx="130" cy="270" r="3" fill="#1A7A5A" opacity="0.3" />
-            </svg>
-          </div>
-        </div>
-      </section>
+        </section>
+      </VantaHero>
 
       {/* B: Stats */}
       <section className="section section--alt">
@@ -183,25 +166,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className={styles.globalMap} aria-hidden="true">
-              <svg viewBox="0 0 480 280" className={styles.mapSvg} fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="480" height="280" rx="12" fill="#dce8ef" />
-                <circle cx="100" cy="130" r="18" fill="#0A4D68" opacity="0.9" />
-                <text x="100" y="135" textAnchor="middle" fontSize="11" fill="white" fontWeight="700" fontFamily="Inter, sans-serif">FDA</text>
-                <circle cx="235" cy="105" r="18" fill="#1A7A5A" opacity="0.9" />
-                <text x="235" y="110" textAnchor="middle" fontSize="11" fill="white" fontWeight="700" fontFamily="Inter, sans-serif">EMA</text>
-                <circle cx="355" cy="115" r="18" fill="#E8913A" opacity="0.9" />
-                <text x="355" y="120" textAnchor="middle" fontSize="11" fill="white" fontWeight="700" fontFamily="Inter, sans-serif">NMPA</text>
-                <circle cx="400" cy="155" r="18" fill="#5D6D7E" opacity="0.85" />
-                <text x="400" y="160" textAnchor="middle" fontSize="11" fill="white" fontWeight="700" fontFamily="Inter, sans-serif">PMDA</text>
-                <circle cx="385" cy="215" r="18" fill="#0A4D68" opacity="0.7" />
-                <text x="385" y="220" textAnchor="middle" fontSize="11" fill="white" fontWeight="700" fontFamily="Inter, sans-serif">TGA</text>
-                <line x1="100" y1="130" x2="235" y2="105" stroke="#0A4D68" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.35" />
-                <line x1="235" y1="105" x2="355" y2="115" stroke="#0A4D68" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.35" />
-                <line x1="355" y1="115" x2="400" y2="155" stroke="#0A4D68" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.35" />
-                <line x1="400" y1="155" x2="385" y2="215" stroke="#0A4D68" strokeWidth="1.5" strokeDasharray="5 5" opacity="0.35" />
-              </svg>
-            </div>
+            <GlobalMap />
           </div>
         </div>
       </section>
@@ -221,7 +186,7 @@ export default function HomePage() {
                   alt={name}
                   width={180}
                   height={90}
-                  style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
+                  className={styles.logoImage}
                 />
               </div>
             ))}
@@ -243,7 +208,7 @@ export default function HomePage() {
                 <h3 className={styles.blogTitle}>{post.title}</h3>
                 <p className={styles.blogDate}>{post.date}</p>
                 <p className={styles.blogExcerpt}>{post.excerpt}</p>
-                <span className="text-link" style={{ marginTop: 'auto' }}>Read more →</span>
+                <span className={`text-link ${styles.blogReadMore}`}>Read more →</span>
               </Link>
             ))}
           </div>

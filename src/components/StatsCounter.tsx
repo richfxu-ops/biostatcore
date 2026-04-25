@@ -3,47 +3,51 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './StatsCounter.module.css';
 
+const ANIMATION_DURATION_MS = 1800;
+const FRAME_MS = 16; // ~60 fps
+
 interface Stat {
   value: number;
-  suffix: string;
+  prefix?: string;
+  suffix?: string;
   label: string;
 }
 
-const stats: Stat[] = [
-  { value: 1000, suffix: '~', label: 'Professionals Worldwide' },
-  { value: 150, suffix: '+', label: 'Regulatory Submissions' },
-  { value: 100, suffix: '+', label: 'Clinical Trials Supported' },
-  { value: 5, suffix: '', label: 'Global Regions' },
+const STATS: Stat[] = [
+  { value: 1000, prefix: '~',  label: 'Professionals Worldwide'  },
+  { value: 150,  suffix: '+',  label: 'Regulatory Submissions'   },
+  { value: 100,  suffix: '+',  label: 'Clinical Trials Supported' },
+  { value: 5,                  label: 'Global Regions'            },
 ];
 
-function useCountUp(target: number, duration = 1800, active: boolean) {
+function useCountUp(target: number, active: boolean): number {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!active) return;
-    let start = 0;
-    const step = target / (duration / 16);
+    let current = 0;
+    const step = target / (ANIMATION_DURATION_MS / FRAME_MS);
     const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
+      current += step;
+      if (current >= target) {
         setCount(target);
         clearInterval(timer);
       } else {
-        setCount(Math.floor(start));
+        setCount(Math.floor(current));
       }
-    }, 16);
+    }, FRAME_MS);
     return () => clearInterval(timer);
-  }, [active, target, duration]);
+  }, [active, target]);
 
   return count;
 }
 
 function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
-  const count = useCountUp(stat.value, 1800, active);
+  const count = useCountUp(stat.value, active);
   return (
     <div className={styles.stat}>
       <div className={styles.number}>
-        {stat.suffix === '~' ? '~' : ''}{count.toLocaleString()}{stat.suffix !== '~' ? stat.suffix : ''}
+        {stat.prefix}{count.toLocaleString()}{stat.suffix}
       </div>
       <div className={styles.label}>{stat.label}</div>
     </div>
@@ -56,8 +60,13 @@ export default function StatsCounter() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setActive(true); observer.disconnect(); } },
-      { threshold: 0.3 }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActive(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -65,7 +74,7 @@ export default function StatsCounter() {
 
   return (
     <div ref={ref} className={styles.grid}>
-      {stats.map(stat => (
+      {STATS.map(stat => (
         <StatItem key={stat.label} stat={stat} active={active} />
       ))}
     </div>
