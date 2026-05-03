@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ContactForm from './ContactForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -23,48 +24,7 @@ export default function ContactPage() {
           <div className={styles.layout}>
             {/* Form */}
             <div>
-              <form className={styles.form} action="#" method="POST">
-                <div className={styles.row}>
-                  <div className={styles.field}>
-                    <label htmlFor="name" className={styles.label}>Full Name</label>
-                    <input id="name" name="name" type="text" className={styles.input} placeholder="Jane Smith" required />
-                  </div>
-                  <div className={styles.field}>
-                    <label htmlFor="email" className={styles.label}>Email Address</label>
-                    <input id="email" name="email" type="email" className={styles.input} placeholder="jane@company.com" required />
-                  </div>
-                </div>
-                <div className={styles.field}>
-                  <label htmlFor="company" className={styles.label}>Company / Organization</label>
-                  <input id="company" name="company" type="text" className={styles.input} placeholder="Pharma Co." />
-                </div>
-                <div className={styles.field}>
-                  <label htmlFor="subject" className={styles.label}>Subject</label>
-                  <select id="subject" name="subject" className={styles.select}>
-                    <option value="">Select a topic...</option>
-                    <option value="biostatistics">Biostatistics Services</option>
-                    <option value="programming">Statistical Programming</option>
-                    <option value="data-management">Data Management</option>
-                    <option value="partnership">Partnership / FSP</option>
-                    <option value="general">General Inquiry</option>
-                  </select>
-                </div>
-                <div className={styles.field}>
-                  <label htmlFor="message" className={styles.label}>Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className={styles.textarea}
-                    rows={6}
-                    placeholder="Tell us about your project or study..."
-                    required
-                  />
-                </div>
-                <button type="submit" className="btn-primary" style={{ width: '100%', textAlign: 'center', fontSize: '16px', padding: '16px' }}>
-                  Send Message
-                </button>
-                <p className={styles.responseNote}>We typically respond within one business day.</p>
-              </form>
+              <ContactForm />
             </div>
 
             {/* Contact info */}
@@ -91,12 +51,12 @@ export default function ContactPage() {
                     <div>
                       <p className={styles.infoLabel}>LinkedIn</p>
                       <a
-                        href="https://www.linkedin.com/company/biostatcore"
+                        href="https://www.linkedin.com/company/111959091/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.infoValue}
                       >
-                        linkedin.com/company/biostatcore
+                        linkedin.com/company/111959091
                       </a>
                     </div>
                   </div>

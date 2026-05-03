@@ -35,7 +35,7 @@ export default function Footer() {
             <a href="mailto:info@biostatcore.com">info@biostatcore.com</a>
             <span>United States</span>
             <a
-              href="https://www.linkedin.com/company/biostatcore"
+              href="https://www.linkedin.com/company/111959091/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.linkedin}

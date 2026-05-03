@@ -85,6 +85,33 @@
   margin-top: -8px;
 }
 
+.fieldError {
+  font-size: 13px;
+  color: #b3261e;
+  margin-top: 2px;
+}
+
+.statusSuccess,
+.statusError {
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px 14px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.statusSuccess {
+  background: #e7f5ec;
+  color: #1a6b3a;
+  border: 1px solid #b6dec5;
+}
+
+.statusError {
+  background: #fbeceb;
+  color: #8a1f17;
+  border: 1px solid #f1c4c0;
+}
+
 /* Info sidebar */
 .info {
   display: flex;
