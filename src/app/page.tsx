@@ -95,18 +95,23 @@ export default function HomePage() {
           <div className={`container ${styles.heroInner}`}>
             <div id="hero-text" className={styles.heroContent}>
               <h1 className={styles.heroHeadline}>
-                Biostatistics That Move<br />Clinical Programs Forward
+                Biostatistics for clinical-stage biotechs
               </h1>
               <p className={styles.heroSubhead}>
-                From study design through regulatory submission, Biostat Core provides the
-                statistical rigor and global expertise your clinical program demands.
+                SAP authoring, statistical programming, and regulatory submission support
+                — delivered by experienced biostatisticians.
               </p>
               <div className={styles.heroCtas}>
-                <Link href="/services/biostatistics" className="btn-primary">
-                  Explore Our Services
-                </Link>
-                <Link href="/about/our-team" className="text-link">
-                  Learn About Our Team →
+                <a
+                  href="https://calendly.com/richard-xu-biostatcore/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  Book a discovery call
+                </a>
+                <Link href="/services/biostatistics" className="text-link">
+                  Learn more →
                 </Link>
               </div>
             </div>
