@@ -98,8 +98,8 @@ export default function HomePage() {
                 Biostatistics for clinical-stage biotechs
               </h1>
               <p className={styles.heroSubhead}>
-                SAP authoring, statistical programming, and regulatory submission support
-                — delivered by experienced biostatisticians.
+                SAP authoring, statistical programming, and regulatory submissions
+                — senior-led, on biotech timelines.
               </p>
               <div className={styles.heroCtas}>
                 <a
