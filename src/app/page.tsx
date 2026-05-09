@@ -95,11 +95,11 @@ export default function HomePage() {
           <div className={`container ${styles.heroInner}`}>
             <div id="hero-text" className={styles.heroContent}>
               <h1 className={styles.heroHeadline}>
-                Biostatistics for clinical-stage biotechs
+                Biostatistics FSP for clinical-stage biotechs
               </h1>
               <p className={styles.heroSubhead}>
-                SAP authoring, statistical programming, and regulatory submissions
-                — senior-led, on biotech timelines.
+                SAP authoring, statistical programming, and regulatory submission support
+                — dedicated team capacity, sized for biotech-stage budgets.
               </p>
               <div className={styles.heroCtas}>
                 <a
